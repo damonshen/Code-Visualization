@@ -1,22 +1,42 @@
 (function(){
+  var styleCode;
   console.log('hello');
+  styleCode = function(element, threshold){
+    var cor;
+    cor = $(element).attr('correlation');
+    if (cor !== void 8) {
+      cor = parseFloat(cor);
+      $(element).removeClass();
+      if (cor > threshold) {
+        return $(element).addClass('green');
+      } else {
+        return $(element).addClass('red');
+      }
+    }
+  };
   $(function(){
+    var sliderOption, val;
+    sliderOption = {
+      min: -1,
+      max: 1,
+      value: 1,
+      step: 0.1,
+      slide: function(event, ui){
+        $('#amount').val(ui.value);
+        return $('div').each(function(index){
+          return styleCode(this, ui.value);
+        });
+      }
+    };
+    $('#slider').slider(sliderOption);
+    val = $('#slider').slider('value');
+    $('#amount').val(val);
     $('#code div').each(function(index){
       $(this).html(index + " test");
       return $(this).css('background', 'blue');
     });
     return $('div').each(function(index){
-      var cor;
-      cor = $(this).attr('correlation');
-      if (cor !== void 8) {
-        cor = parseFloat(cor);
-        $(this).removeClass();
-        if (cor > 0.5) {
-          return $(this).addClass('green');
-        } else {
-          return $(this).addClass('red');
-        }
-      }
+      return styleCode(this);
     });
   });
 }).call(this);
