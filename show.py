@@ -1,5 +1,7 @@
 from pyh import *
+import csv
 
+#add the link and js in the header
 page = PyH('Code visualization')
 page.addCSS('./assert/css/main.css')
 page.addJS('./bower_components/jquery/dist/jquery.min.js')
@@ -8,6 +10,13 @@ page << div('title', id='title')
 code = page << div(id='code')
 code << 'test' 
 code.attributes['correlation'] = 50
+
+#read the code from the csv file
+f = open('./test.csv', 'r')
+for row in csv.reader(f):
+    api = page << div()
+    api << row[0]
+    api.attributes['correlation'] = row[1]
 code << div('green', cl='green')
 code << div('green-red', cl='green-red')
 code << div('red', cl='red')
