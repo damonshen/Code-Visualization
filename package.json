@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "nib": "~1.0.3",
-    "gulp-load-plugins": "^0.5.3",
-    "gulp-watch": "^0.6.8",
-    "gulp-livescript": "^1.0.3",
     "gulp": "^3.8.6",
+    "gulp-livescript": "^1.0.3",
+    "gulp-load-plugins": "^0.5.3",
+    "gulp-plumber": "^0.6.4",
     "gulp-stylus": "^1.1.0",
-    "gulp-plumber": "^0.6.4"
+    "gulp-watch": "^0.6.8",
+    "jeet": "^5.3.0",
+    "nib": "~1.0.3"
   },
   "devDependencies": {},
   "scripts": {
