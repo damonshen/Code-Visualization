@@ -9,7 +9,7 @@ gulp.task('style', function(){
 gulp.task('script', function(){
   return gulp.src('./assert/js/main.ls').pipe($.plumber()).pipe($.livescript()).pipe(gulp.dest('./assert/js'));
 });
-gulp.task('watch', function(){
+gulp.task('watch', ['style', 'script'], function(){
   gulp.watch('./assert/css/*.styl', ['style']);
   return gulp.watch('./assert/js/*.ls', ['script']);
 });

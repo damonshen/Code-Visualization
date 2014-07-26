@@ -14,6 +14,6 @@ gulp.task \script, ->
     .pipe $.livescript!
     .pipe gulp.dest \./assert/js
 
-gulp.task \watch, ->
+gulp.task \watch, [\style \script], ->
   gulp.watch \./assert/css/*.styl, [\style]
   gulp.watch \./assert/js/*.ls, [\script]

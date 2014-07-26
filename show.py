@@ -12,9 +12,6 @@ page << div(id='slider')
 page << input(id='amount', type='text')
 page << div('title', id='title')
 code = page << div(id='code')
-code << 'test' 
-code.attributes['correlation'] = 50
-
 
 #read the code from the csv file
 f = open('./test.csv', 'r')
@@ -22,8 +19,5 @@ for row in csv.reader(f):
     api = page << div()
     api << row[0]
     api.attributes['correlation'] = row[1]
-code << div('green', cl='green')
-code << div('green-red', cl='green-red')
-code << div('red', cl='red')
-code << div('red-green', cl='red-green')
+page << div('test animation', cl='green')
 page.printOut()

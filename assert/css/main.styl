@@ -10,13 +10,28 @@
   background: linear-gradient(top, green, red)
 
 .green
-  background: green;
+  animation-duration: 1s
+  animation-fill-mode: forwards
+  animation-name: greenStyle
 
 .red
-  background: red;
+  @extend .green
+  animation-name: redStyle
 
 .green-red
   background: linear-gradient(top, green, red)
 
 .red-green
   background: linear-gradient(top, red, green)
+
+@keyframes redStyle {
+  100% {
+    background: red 
+  }
+}
+
+@keyframes greenStyle {
+  100% {
+    background: green 
+  }
+}

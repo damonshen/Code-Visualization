@@ -34,11 +34,30 @@
 #code:last-child {
   margin-right: 0%;
 }
-.green {
-  background: #008000;
+.green,
+.red {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: greenStyle;
+  -moz-animation-name: greenStyle;
+  -o-animation-name: greenStyle;
+  -ms-animation-name: greenStyle;
+  animation-name: greenStyle;
 }
 .red {
-  background: #f00;
+  -webkit-animation-name: redStyle;
+  -moz-animation-name: redStyle;
+  -o-animation-name: redStyle;
+  -ms-animation-name: redStyle;
+  animation-name: redStyle;
 }
 .green-red {
   background: -webkit-linear-gradient(top, #008000, #f00);
@@ -53,4 +72,44 @@
   background: -o-linear-gradient(top, #f00, #008000);
   background: -ms-linear-gradient(top, #f00, #008000);
   background: linear-gradient(to bottom, #f00, #008000);
+}
+@-moz-keyframes redStyle {
+  100% {
+    background: #f00;
+  }
+}
+@-webkit-keyframes redStyle {
+  100% {
+    background: #f00;
+  }
+}
+@-o-keyframes redStyle {
+  100% {
+    background: #f00;
+  }
+}
+@keyframes redStyle {
+  100% {
+    background: #f00;
+  }
+}
+@-moz-keyframes greenStyle {
+  100% {
+    background: #008000;
+  }
+}
+@-webkit-keyframes greenStyle {
+  100% {
+    background: #008000;
+  }
+}
+@-o-keyframes greenStyle {
+  100% {
+    background: #008000;
+  }
+}
+@keyframes greenStyle {
+  100% {
+    background: #008000;
+  }
 }
