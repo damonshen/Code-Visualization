@@ -26,8 +26,5 @@ $ ->
   $ \#slider .slider sliderOption
   val = $ \#slider .slider \value
   $ \#amount .val val
-  $ '#code div' .each (index)->
-    $ this .html "#index test"
-    $ this .css \background, \blue
   $ \div .each (index)->
     styleCode(this)
