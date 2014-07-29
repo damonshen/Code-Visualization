@@ -2,12 +2,23 @@
 @import '../../node_modules/jeet/stylus/jeet'
 
 #title
+  display: none
   margin-top: 20px
   background-color: red
   background: linear-gradient(top, white, black)
+
+#slider
+  center(600px)
+#amount
+  center(200px)
+  margin-top 10px
+
 #code
   col(1/2)
-  background: linear-gradient(top, green, red)
+  margin-top: 20px
+
+#original
+  col(1/2)
 
 .green
   animation-duration: 1s
@@ -19,19 +30,33 @@
   animation-name: redStyle
 
 .green-red
-  background: linear-gradient(top, green, red)
+  @extend .green
+  animation-name: green-redStyle
 
 .red-green
-  background: linear-gradient(top, red, green)
+  @extend .green
+  animation-name: red-greenStyle 
 
 @keyframes redStyle {
   100% {
-    background: red 
+    background: red
   }
 }
 
 @keyframes greenStyle {
   100% {
     background: green 
+  }
+}
+
+@keyframes green-redStyle {
+  100% {
+    background: linear-gradient(top, green, red)
+  }
+}
+
+@keyframes red-greenStyle {
+  100% {
+    background: linear-gradient(top, red, green)
   }
 }

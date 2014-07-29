@@ -12,6 +12,7 @@ page << div(id='slider')
 page << input(id='amount', type='text')
 page << div('title', id='title')
 code = page << div(id='code')
+original = page << div(id='original')
 
 #read the code from the csv file
 '''
@@ -21,7 +22,11 @@ for row in csv.reader(f):
     api << row[0]
     api.attributes['correlation'] = row[1]
 '''
-content = open('/home/damon/Desktop/correlation/aaspring-transl/src/src/com/aaspring/util/file/ZipFileEntryAccessor-unPackZipIntoTmpPath').read()
+#COR_FILE_PATH = raw_input('The path of correlation file : ')
+#ORIGIN_PATH = COR_FILE_PATH.replace('result/correlation', 'testFile', 1).replace('/src', '', 1)
+
+content = open('/home/damon/Desktop/result/correlation/aaspring-transl/src/src/com/aaspring/util/file/ZipFileEntryAccessor-unPackZipIntoTmpPath').read()
+#content = open(COR_FILE_PATH).read()
 
 for row in content.split('\n'):
     if row != '':
@@ -30,5 +35,11 @@ for row in content.split('\n'):
         api << attr[0]
         api.attributes['correlation'] = attr[1]
 
-page << div('test animation', cl='green')
+'''
+originalContent = open(ORIGIN_PATH).read()
+for row in content.split('\n'):
+    line = code << div()   
+    line << row
+'''
+
 page.printOut()
